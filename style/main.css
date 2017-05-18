@@ -1,0 +1,41 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.all{
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+header,
+footer{
+  height: 3em;
+  background-color: #F25251;
+}
+
+.main{
+  display: flex;
+  flex: 1;
+}
+
+.nav{
+  flex: 0 0 15%;
+  background-color: #00B5C1;
+}
+
+.content{
+  flex: 1;
+  background-color: #005864;
+}
+
+@media (max-width: 768px){
+   .all{
+     flex-direction: column; 
+     flex: 1; 
+     }
+     .nav{
+      flex: 0 0 30%; 
+    } 
+}
