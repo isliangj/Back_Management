@@ -12,7 +12,42 @@
 header,
 footer{
   height: 3em;
-  background-color: #F25251;
+  background-color: #E8EEF4;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+}
+
+header div{
+  padding: 0 3%;
+}
+
+.logo{
+  display: flex;
+}
+
+.logo img,
+.logo p{
+  margin: auto;
+}
+
+.logo p{
+  color: #00B5F8;
+  padding-left: 5px;
+  font-size: 20px;
+}
+
+.login{
+  margin: auto 0;
+}
+
+.login a{
+  text-decoration: none;
+  color: #00B5F8;
+  font-size: 20px;
+  letter-spacing: 3px;
 }
 
 .main{
@@ -22,12 +57,54 @@ footer{
 
 .nav{
   flex: 0 0 15%;
-  background-color: #00B5C1;
+  background-color: #F1F5F8;
+}
+
+.nav_tit{
+  margin: 10px 30px;
+}
+
+.nav_list{
+  background-color: #E8EEF4;
+  padding-left: 30px;
+
+}
+
+.nav_list li{
+  list-style: none;
+  color: #466978;
+  padding: 10px 25px;
+  background: url("../images/icon1.png") no-repeat 0 13px;
 }
 
 .content{
   flex: 1;
-  background-color: #005864;
+}
+
+.content_add{
+  text-align: right;
+  width: 95%;
+  margin: 32px auto 0;
+  background-color: #E8EEF4;
+}
+
+.content_add a{
+  padding-right: 10px;
+  text-decoration: none;
+  color: #00B5F8;
+  font-size: 25px;
+
+}
+
+.content_list table{
+  width: 95%;
+  margin: 0 auto;
+  border-spacing: 0;
+}
+
+.content_list th{
+  width: 12.5%;
+  background-color: #E8EEF4;
 }
 
 @media (max-width: 768px){
