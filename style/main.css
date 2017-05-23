@@ -21,7 +21,7 @@ header{
 }
 
 header div{
-  padding: 0 3%;
+  padding: 0 30px;
 }
 
 .logo{
@@ -81,10 +81,20 @@ header div{
   flex: 1;
 }
 
+.content_list table{
+  width: 95%;
+  margin: 30px auto;
+  border-collapse:collapse; 
+  text-align: left;
+  table-layout: fixed; 
+}
+
+.content_list tr{
+  border: 2px solid #E7EBEE;
+}
+
 .content_add{
   text-align: right;
-  width: 95%;
-  margin: 32px auto 0;
   background-color: #E8EEF4;
 }
 
@@ -93,18 +103,19 @@ header div{
   text-decoration: none;
   color: #00B5F8;
   font-size: 25px;
-
-}
-
-.content_list table{
-  width: 95%;
-  margin: 0 auto;
-  border-spacing: 0;
 }
 
 .content_list th{
-  width: 12.5%;
   background-color: #E8EEF4;
+  padding: 5px 0;
+}
+
+footer{
+  display: flex;
+}
+
+footer p{
+  margin: auto; 
 }
 
 @media (max-width: 768px){
