@@ -31,11 +31,11 @@
             </div>
         </div>
         <div class="content">
+            <div class="content_add">
+                <a class="btn btn-info btn-lg show-layer" data-show-layer="hw-layer" role="button">&#10010</a>
+            </div>
             <div class="content_list">
                 <table>
-                    <tr>
-                        <td colspan="8" class="content_add"><a href="#">&#10010</a></td>
-                    </tr>
                     <tr>
                         <th>姓名</th>
                         <th>学号</th>
@@ -47,23 +47,23 @@
                         <th>操作</th>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>梁杰</td>
+                        <td>2506150119</td>
+                        <td>男</td>
+                        <td>20</td>
+                        <td>2015/09</td>
+                        <td>物联网1班</td>
+                        <td>信息工程学院</td>
+                        <td class="content_button"><button>删除</button><button>修改</button></td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>梁杰</td>
+                        <td>2506150119</td>
+                        <td>男</td>
+                        <td>20</td>
+                        <td>2015/09</td>
+                        <td>物联网1班</td>
+                        <td>信息工程学院</td>
                         <td></td>
                     </tr>
                     <tr>
@@ -83,5 +83,49 @@
     <footer>
         <p>@XXX实验室</p>
     </footer>
+
+    <div class="hw-overlay" id="hw-layer"> 
+    <div class="hw-layer-wrap"> 
+        <span class="glyphicon glyphicon-remove hwLayer-close">&#10005</span> 
+        <div class="row">
+            <label>姓名
+                <input type="text">
+            </label>
+            <label>学号
+                <input type="text">
+            </label>
+            <label>性别
+                <select>
+                    <option value="man">男</option>
+                    <option value="woman">女</option>
+                </select>
+            </label>
+            <label>年龄
+                <input type="text">
+            </label>
+            <label class="row_time">日期
+                <input type="month">
+            </label>
+            <label>班级
+                <input type="text">
+            </label>
+            <label>学院
+                <select>
+                    <option value="1">信息工程学院</option>
+                    <option value="2">机械与材料工程学院</option>
+                    <option value="3">化学工程学院</option>
+                    <option value="4">外国语学院</option>
+                    <option value="5">人文学院</option>
+                    <option value="6">艺术学院</option>
+                    <option value="7">师范学院</option>
+                    <option value="8">生物学院</option>
+                </select>
+            </label>
+            <button class="hy_but btn btn-success hwLayer-ok">确 定</button> 
+        </div> 
+    </div> 
+</div> 
+    <script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
 </body>
 </html>
