@@ -56,6 +56,21 @@
                     </tr>-->
                 </table>
             </div>
+            <div class="page">
+                <ul class="pagination modal-1">
+                    <li><a class="prev">&laquo</a></li>
+                    <li><a class="active" id="Upage">1</a></li>
+                    <!--<li><a>2</a></li>
+                    <li><a>3</a></li>
+                    <li><a>4</a></li>
+                    <li><a>5</a></li>
+                    <li><a>6</a></li>
+                    <li><a>7</a></li>
+                    <li><a>8</a></li>
+                    <li><a>9</a></li>-->
+                    <li><a  class="next">&raquo;</a></li>
+                </ul>
+            </div>
         </div>
     </div>
     <footer>
@@ -66,50 +81,30 @@
     <div class="hw-layer-wrap"> 
         <span class="glyphicon glyphicon-remove hwLayer-close">&#10005</span> 
         <div class="row">
-            <label>姓名
-                <input type="text">
-            </label>
-            <label>学号
-                <input type="text">
-            </label>
-            <label>性别
-                <select>
-                    <option value="man">男</option>
-                    <option value="woman">女</option>
-                </select>
-            </label>
-            <label>年龄
-                <input type="text">
-            </label>
-            <label class="row_time">日期
-                <input type="month">
-            </label>
-            <label>班级
-                <input type="text">
-            </label>
-            <label>学院
-                <select>
-                    <option value="1">信息工程学院</option>
-                    <option value="2">机械与材料工程学院</option>
-                    <option value="3">化学工程学院</option>
-                    <option value="4">外国语学院</option>
-                    <option value="5">人文学院</option>
-                    <option value="6">艺术学院</option>
-                    <option value="7">师范学院</option>
-                    <option value="8">生物学院</option>
-                </select>
-            </label>
-            <button class="hy_but btn btn-success hwLayer-ok">确 定</button> 
+            <form id="mainform">
+                姓名<input type="text">
+                学号<input type="text">
+                性别<input type="text">
+                年龄<input type="text">
+                日期<input type="text">
+                班级<input type="text">
+                学院<select>
+                        <option value="1">信息工程学院</option>
+                        <option value="2">机械与材料工程学院</option>
+                        <option value="3">化学工程学院</option>
+                        <option value="4">外国语学院</option>
+                        <option value="5">人文学院</option>
+                        <option value="6">艺术学院</option>
+                        <option value="7">师范学院</option>
+                        <option value="8">生物学院</option>
+                    </select>
+            </form>
+            <button class="hy_but btn btn-success hwLayer-ok" onclick="addition()">确 定</button> 
         </div> 
     </div> 
 </div> 
     <script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
-    <!--<script src="http://cdn.bootcss.com/datatables/1.10.11/js/jquery.js"></script>
-    <script src="http://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="http://cdn.bootcss.com/datatables/1.10.11/js/jquery.dataTables.min.js"></script>
-    <script src="http://cdn.bootcss.com/datatables/1.10.11/js/dataTables.bootstrap.min.js"></script>-->
     <script type="text/javascript" src="./js/main.js"></script>
     <!--<script type="text/javascript" src="./js/ajax.js"></script>-->
-    <!--<script type="text/javascript" src="./js/jquery-swallow-table.js"></script>-->
 </body>
 </html>

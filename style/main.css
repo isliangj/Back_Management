@@ -127,6 +127,10 @@ header div{
   color: #72706F;
 }
 
+.content_button :first-child{
+  background-color: #FF5862;
+}
+
 footer{
   display: flex;
 }
@@ -134,7 +138,6 @@ footer{
 footer p{
   margin: auto; 
 }
-
 
 .hw-overlay{
   display:none;
@@ -171,14 +174,15 @@ footer p{
   color:#ccc;
 }
 
-.row label{
+.row form{
   display: block;
-  margin: 20px 0;
+
   color: #466978;
 }
 
-.row label input{
+.row input{
   width: 90%;
+  margin: 20px 0;
   padding: 5px;
   border: none;
   border: 1px solid #E8EEF4;
@@ -194,4 +198,64 @@ footer p{
   color: #466978;
   font-size: 15px;
   float: right;
+}
+
+/*
+分页样式
+*/
+
+.page{
+  display: flex;
+}
+
+.pagination {
+  list-style: none;
+  display: inline-block;
+  padding: 0;
+  margin: 20px auto;
+}
+.pagination li {
+  display: inline;
+  text-align: center;
+}
+.pagination a {
+  float: left;
+  display: block;
+  font-size: 14px;
+  text-decoration: none;
+  padding: 5px 12px;
+  color: #fff;
+  margin-left: -1px;
+  border: 1px solid transparent;
+  line-height: 1.5;
+}
+.pagination a.active {
+  cursor: default;
+}
+.pagination a:active {
+  outline: none;
+}
+
+.modal-1 li:first-child a {
+  -moz-border-radius: 6px 0 0 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px 0 0 6px;
+}
+.modal-1 li:last-child a {
+  -moz-border-radius: 0 6px 6px 0;
+  -webkit-border-radius: 0;
+  border-radius: 0 6px 6px 0;
+}
+.modal-1 a {
+  border-color: #ddd;
+  color: #00B5F8;
+  background: #fff;
+}
+.modal-1 a:hover {
+  background: #eee;
+}
+.modal-1 a.active, .modal-1 a:active {
+  border-color: #00B5F8;
+  background: #00B5F8;
+  color: #fff;
 }
