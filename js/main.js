@@ -43,7 +43,6 @@ $(function(){
 
 
 
-
 $.ajax({
     method: "GET",
     url:"http://39.108.63.108/Sign_In/AdminStudent/findAll.action?page=1",
@@ -51,27 +50,43 @@ $.ajax({
     .done(function(msg){
 			for(var i=0;i<msg.rows.length;i++)
 			{
-      	var tTr="<tr><td>"+msg.rows[i].sname+"</td>"+"<td>"+msg.rows[i].snumber+"</td>"+"<td>"+msg.rows[i].ssex+"</td>"+"<td>"+msg.rows[i].sage+"</td>"+"<td>"+msg.rows[i].dbAcademy.aname+"</td>"+"<td"+" class='content_button'><button onclick='del()'>删除</button><button>修改</button></td>"+"</td></tr>";
+      	var tTr="<tr class='pag_li'><td>"+msg.rows[i].sname+"</td>"+"<td>"+msg.rows[i].snumber+"</td>"+"<td>"+msg.rows[i].ssex+"</td>"+"<td>"+msg.rows[i].sage+"</td>"+"<td>"+msg.rows[i].dbAcademy.aname+"</td>"+"<td"+" class='content_button'><button onclick='del()'>删除</button><button>修改</button></td>"+"</td></tr>";
 				$("#dataTbody").append(tTr);
 			}
 			var page=Math.ceil(msg.total / 20);
 			for(var j=page;j>1;j--)
 			{
-				var tUl="<li><a onclick='paging()'>"+j+"</a></li>";
+				var tUl="<li><a onclick='paging("+j+")'>"+j+"</a></li>";
 				$("#Upage").after(tUl);
 			}
 	});
 
 
-function addition(){
-var data = $('#mainform').serialize();
-$.ajax({
-        type:"GET",
-        data: data,
-        url:"http://39.108.63.108/Sign_In/AdminStudent/add.action",
-    });
+
+function paging(j){
+	var Url="http://39.108.63.108/Sign_In/AdminStudent/findAll.action?page="+j;
+	$.ajax({
+		method: "GET",
+		url: Url,
+	})
+	.done(function(msg){
+    	$("tr").remove(".pag_li");
+			for(var i=0;i<msg.rows.length;i++)
+			{
+      	var tTr="<tr class='pag_li'><td>"+msg.rows[i].sname+"</td>"+"<td>"+msg.rows[i].snumber+"</td>"+"<td>"+msg.rows[i].ssex+"</td>"+"<td>"+msg.rows[i].sage+"</td>"+"<td>"+msg.rows[i].dbAcademy.aname+"</td>"+"<td"+" class='content_button'><button onclick='del()'>删除</button><button>修改</button></td>"+"</td></tr>";
+				$("#dataTbody").append(tTr);
+			}
+	});
 }
 
-function del(){
-	
-}
+
+
+$(document).ready(function(){ 
+$('#lastinput').click(function(){
+      $.ajax({
+         url:"http://39.108.63.108/Sign_In/AdminStudent/add.action",
+         type:'post',         
+         data:$("#mainform").serialize(), 
+      });        
+   });
+ })
