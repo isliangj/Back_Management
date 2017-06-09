@@ -1,4 +1,6 @@
-/*弹出层*/
+/*
+弹出层
+*/
 $(function(){
 	//展示层
 	function showLayer(id){
@@ -50,11 +52,11 @@ $.ajax({
     .done(function(msg){
 			for(var i=0;i<msg.rows.length;i++)
 			{
-      	var tTr="<tr class='pag_li'><td>"+msg.rows[i].sname+"</td>"+"<td>"+msg.rows[i].snumber+"</td>"+"<td>"+msg.rows[i].ssex+"</td>"+"<td>"+msg.rows[i].sage+"</td>"+"<td>"+msg.rows[i].dbAcademy.aname+"</td>"+"<td"+" class='content_button'><button onclick='del()'>删除</button><button>修改</button></td>"+"</td></tr>";
+      	var tTr="<tr class='pag_li' id='pag_li"+i+"'><td>"+msg.rows[i].sname+"</td>"+"<td>"+msg.rows[i].snumber+"</td>"+"<td>"+msg.rows[i].ssex+"</td>"+"<td>"+msg.rows[i].sage+"</td>"+"<td>"+msg.rows[i].dbAcademy.aname+"</td>"+"<td"+" class='content_button'><button onclick='del("+i+")'>删除</button><button>修改</button></td>"+"</td></tr>";
 				$("#dataTbody").append(tTr);
 			}
 			var page=Math.ceil(msg.total / 20);
-			for(var j=page;j>1;j--)
+			for(var j=page;j>0;j--)
 			{
 				var tUl="<li><a onclick='paging("+j+")'>"+j+"</a></li>";
 				$("#Upage").after(tUl);
@@ -73,7 +75,7 @@ function paging(j){
     	$("tr").remove(".pag_li");
 			for(var i=0;i<msg.rows.length;i++)
 			{
-      	var tTr="<tr class='pag_li'><td>"+msg.rows[i].sname+"</td>"+"<td>"+msg.rows[i].snumber+"</td>"+"<td>"+msg.rows[i].ssex+"</td>"+"<td>"+msg.rows[i].sage+"</td>"+"<td>"+msg.rows[i].dbAcademy.aname+"</td>"+"<td"+" class='content_button'><button onclick='del()'>删除</button><button>修改</button></td>"+"</td></tr>";
+      	var tTr="<tr class='pag_li' id='pag_li"+i+"'><td>"+msg.rows[i].sname+"</td>"+"<td>"+msg.rows[i].snumber+"</td>"+"<td>"+msg.rows[i].ssex+"</td>"+"<td>"+msg.rows[i].sage+"</td>"+"<td>"+msg.rows[i].dbAcademy.aname+"</td>"+"<td"+" class='content_button'><button onclick='del("+i+")'>删除</button><button>修改</button></td>"+"</td></tr>";
 				$("#dataTbody").append(tTr);
 			}
 	});
@@ -90,3 +92,8 @@ $('#lastinput').click(function(){
       });        
    });
  })
+
+
+function del(i){
+	$("tr[id='pag_li"+i+"']").remove();
+}
