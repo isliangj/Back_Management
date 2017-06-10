@@ -49,9 +49,7 @@
                         <td>2506150119</td>
                         <td>男</td>
                         <td>20</td>
-                        <td>2015/09</td>
-                        <td>物联网1班</td>
-                        <td>信息工程学院</td>2
+                        <td>信息工程学院</td>
                         <td class="content_button"><button>删除</button><button>修改</button></td>
                     </tr>-->
                 </table>
@@ -78,31 +76,31 @@
     </footer>
 
     <div class="hw-overlay" id="hw-layer"> 
-    <div class="hw-layer-wrap"> 
-        <span class="glyphicon glyphicon-remove hwLayer-close">&#10005</span> 
-        <div class="row">
-            <form id="mainform">
-                姓名<input type="text">
-                学号<input type="text">
-                性别<input type="text">
-                年龄<input type="text">
-                日期<input type="text">
-                班级<input type="text">
-                学院<select>
-                        <option value="1">信息工程学院</option>
-                        <option value="2">机械与材料工程学院</option>
-                        <option value="3">化学工程学院</option>
-                        <option value="4">外国语学院</option>
-                        <option value="5">人文学院</option>
-                        <option value="6">艺术学院</option>
-                        <option value="7">师范学院</option>
-                        <option value="8">生物学院</option>
-                    </select>
-            </form>
-            <button id="lastinput" class="hy_but btn btn-success hwLayer-ok">确 定</button> 
+        <div class="hw-layer-wrap"> 
+            <span class="glyphicon glyphicon-remove hwLayer-close">&#10005</span> 
+            <div class="row">
+                <form id="mainform">
+                    姓名<input name="sname" type="text">
+                    学号<input name="snumber" type="text">
+                    性别<input name="ssex" type="text">
+                    年龄<input name="sage" type="text">
+                    日期<input name="sdate" type="text">
+                    班级<input name="cid" type="text">
+                    学院<select name="isSchool">
+                            <option value="1">信息工程学院</option>
+                            <option value="2">机械与材料工程学院</option>
+                            <option value="3">化学工程学院</option>
+                            <option value="4">外国语学院</option>
+                            <option value="5">人文学院</option>
+                            <option value="6">艺术学院</option>
+                            <option value="7">师范学院</option>
+                            <option value="8">生物学院</option>
+                        </select>
+                </form>
+                <button id="lastinput" class="hy_but btn btn-success hwLayer-ok">确 定</button> 
+            </div> 
         </div> 
-    </div> 
-</div> 
+    </div>
     <script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="./js/main.js"></script>
 </body>

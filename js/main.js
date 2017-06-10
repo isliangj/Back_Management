@@ -43,18 +43,21 @@ $(function(){
 	});
 });
 
-
+var Mymsg;
+var Myi;
 
 $.ajax({
     method: "GET",
     url:"http://39.108.63.108/Sign_In/AdminStudent/findAll.action?page=1",
   })
     .done(function(msg){
+			Mymsg=msg;
 			for(var i=0;i<msg.rows.length;i++)
 			{
-      	var tTr="<tr class='pag_li' id='pag_li"+i+"'><td>"+msg.rows[i].sname+"</td>"+"<td>"+msg.rows[i].snumber+"</td>"+"<td>"+msg.rows[i].ssex+"</td>"+"<td>"+msg.rows[i].sage+"</td>"+"<td>"+msg.rows[i].dbAcademy.aname+"</td>"+"<td"+" class='content_button'><button onclick='del("+i+")'>删除</button><button>修改</button></td>"+"</td></tr>";
+      	var tTr="<tr class='pag_li' id='pag_li"+i+"'><td>"+msg.rows[i].sname+"</td>"+"<td>"+msg.rows[i].snumber+"</td>"+"<td>"+msg.rows[i].ssex+"</td>"+"<td>"+msg.rows[i].sage+"</td>"+"<td>"+msg.rows[i].dbAcademy.aname+"</td>"+"<td"+" class='content_button'><button onclick='del("+i+")'>删除</button><button class=\"btn btn-info btn-lg show-layer\" data-show-layer=\"hw-layer\" role=\"button\">修改</button>"+"</td></tr>";
 				$("#dataTbody").append(tTr);
 			}
+			Myi =i;
 			var page=Math.ceil(msg.total / 20);
 			for(var j=page;j>0;j--)
 			{
@@ -72,12 +75,14 @@ function paging(j){
 		url: Url,
 	})
 	.done(function(msg){
+			Mymsg=msg;
     	$("tr").remove(".pag_li");
 			for(var i=0;i<msg.rows.length;i++)
 			{
-      	var tTr="<tr class='pag_li' id='pag_li"+i+"'><td>"+msg.rows[i].sname+"</td>"+"<td>"+msg.rows[i].snumber+"</td>"+"<td>"+msg.rows[i].ssex+"</td>"+"<td>"+msg.rows[i].sage+"</td>"+"<td>"+msg.rows[i].dbAcademy.aname+"</td>"+"<td"+" class='content_button'><button onclick='del("+i+")'>删除</button><button>修改</button></td>"+"</td></tr>";
+      	var tTr="<tr class='pag_li' id='pag_li"+i+"'><td>"+msg.rows[i].sname+"</td>"+"<td>"+msg.rows[i].snumber+"</td>"+"<td>"+msg.rows[i].ssex+"</td>"+"<td>"+msg.rows[i].sage+"</td>"+"<td>"+msg.rows[i].dbAcademy.aname+"</td>"+"<td"+" class='content_button'><button onclick='del("+i+")'>删除</button><button class='btn btn-info btn-lg show-layer' data-show-layer='hw-layer' role='button'>修改</button>"+"</td></tr>";
 				$("#dataTbody").append(tTr);
 			}
+			Myi = i;
 	});
 }
 
@@ -86,14 +91,29 @@ function paging(j){
 $(document).ready(function(){ 
 $('#lastinput').click(function(){
       $.ajax({
-         url:"http://39.108.63.108/Sign_In/AdminStudent/add.action",
-         type:'post',         
-         data:$("#mainform").serialize(), 
-      });        
-   });
+         url:"http://39.108.63.108/Sign_In/AdminStudent/add.action?" + $("#mainform").serialize(),
+         type:'GET',
+      });
+			var sname= $("input[name='sname']").val();
+			var snumber= $("input[name='snumber']").val();
+			var ssex= $("input[name='ssex']").val();
+			var sage= $("input[name='sage']").val();
+			var sdata= $("input[name='sdata']").val();
+			var cid=$("input[name='cid']").val();
+			var isSchool=$("select[name='isSchool']").find("option:selected").text();
+			Myi++;
+
+			var add_tr="<tr class='pag_li' id='pag_li"+Myi+"'><td>"+sname+"</td>"+"<td>"+snumber+"</td>"+"<td>"+ssex+"</td>"+"<td>"+sage+"</td>"+"<td>"+isSchool+"</td>"+"<td"+" class='content_button'><button onclick='del("+Myi+")'>删除</button><button class='btn btn-info btn-lg show-layer' data-show-layer='hw-layer' role='button'>修改</button></td>"+"</td></tr>";
+			$("#dataTbody").append(add_tr);
+	});
  })
 
 
 function del(i){
 	$("tr[id='pag_li"+i+"']").remove();
+	ids=Mymsg.rows[i].sid;
+	$.ajax({
+		url:"http://39.108.63.108/Sign_In/AdminStudent/delete.action?ids=" + ids,
+		type:"GET",
+	});
 }
