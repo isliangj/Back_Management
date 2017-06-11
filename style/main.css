@@ -200,6 +200,14 @@ footer p{
   float: right;
 }
 
+#updateinput{
+  display: none;
+}
+
+#lastinput{
+  display: block;
+}
+
 /*
 分页样式
 */

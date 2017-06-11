@@ -17,6 +17,8 @@
             <a href="#">登录</a>
         </div>
     </header>
+
+
     <div class="main">
         <div class="nav">
             <div class="nav_tit">
@@ -30,6 +32,8 @@
                 </ul>
             </div>
         </div>
+
+
         <div class="content">
             <div class="content_add">
                 <a class="btn btn-info btn-lg show-layer" data-show-layer="hw-layer" role="button">&#10010</a>
@@ -44,16 +48,22 @@
                         <th>学院</th>
                         <th>操作</th>
                     </tr>
+
                     <!--<tr>
                         <td>梁杰</td>
                         <td>2506150119</td>
                         <td>男</td>
                         <td>20</td>
                         <td>信息工程学院</td>
-                        <td class="content_button"><button>删除</button><button>修改</button></td>
+                        <td class="content_button">
+                            <button>删除</button>
+                            <button class='btn btn-info btn-lg show-layer' data-show-layer='hw-layer' role='button'>修改</button>
+                        </td>
                     </tr>-->
+
                 </table>
             </div>
+            
             <div class="page">
                 <ul class="pagination modal-1">
                     <li><a class="prev" id="Upage">&laquo</a></li>
@@ -71,6 +81,8 @@
             </div>
         </div>
     </div>
+
+    
     <footer>
         <p>@XXX实验室</p>
     </footer>
@@ -86,7 +98,7 @@
                     年龄<input name="sage" type="text">
                     日期<input name="sdate" type="text">
                     班级<input name="cid" type="text">
-                    学院<select name="isSchool">
+                    学院<select name="aid">
                             <option value="1">信息工程学院</option>
                             <option value="2">机械与材料工程学院</option>
                             <option value="3">化学工程学院</option>
@@ -96,7 +108,13 @@
                             <option value="7">师范学院</option>
                             <option value="8">生物学院</option>
                         </select>
+                    是否在校
+                        <select name="isSchool">
+                            <option value="1">是</option>
+                            <option value="2">否</option>
+                        </select>
                 </form>
+                <button id="updateinput" class="hy_but btn btn-success hwLayer-ok">修 改</button>
                 <button id="lastinput" class="hy_but btn btn-success hwLayer-ok">确 定</button> 
             </div> 
         </div> 
