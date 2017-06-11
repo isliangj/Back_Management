@@ -26,9 +26,9 @@
             </div>
             <div class="nav_list">
                 <ul>
-                    <li>学生列表</li>
-                    <li>教师管理</li>
-                    <li>管理设置</li>
+                    <li id="nav_list_fir"><a>学生列表</a></li>
+                    <li><a>教师管理</a></li>
+                    <li><a>管理设置</a></li>
                 </ul>
             </div>
         </div>
@@ -36,6 +36,20 @@
 
         <div class="content">
             <div class="content_add">
+                <div class="search">
+                    <select name="search_sel" class="search_sel">
+                        <option value="sname">姓名</option>
+                        <option value="snumber">学号</option>
+                        <option value="ssex">性别</option>
+                        <option value="sage">年龄</option>
+                        <option value="sdate">日期</option>
+                        <option value="dbClass.cid">班级</option>
+                        <option value="dbAcademy.aid">学院</option>
+                        <option value="isSchool">是否在校</option>
+                    </select>
+                    <input id="search_inp" class="search_inp" type="text" name="search">
+                    <a id="search_btn" role="button"><img src="./images/search.png"></a>
+                </div>
                 <a class="btn btn-info btn-lg show-layer" data-show-layer="hw-layer" role="button">&#10010</a>
             </div>
             <div class="content_list">
@@ -48,34 +62,12 @@
                         <th>学院</th>
                         <th>操作</th>
                     </tr>
-
-                    <!--<tr>
-                        <td>梁杰</td>
-                        <td>2506150119</td>
-                        <td>男</td>
-                        <td>20</td>
-                        <td>信息工程学院</td>
-                        <td class="content_button">
-                            <button>删除</button>
-                            <button class='btn btn-info btn-lg show-layer' data-show-layer='hw-layer' role='button'>修改</button>
-                        </td>
-                    </tr>-->
-
                 </table>
             </div>
             
             <div class="page">
                 <ul class="pagination modal-1">
                     <li><a class="prev" id="Upage">&laquo</a></li>
-                    <!--<li><a class="active">1</a></li>-->
-                    <!--<li><a>2</a></li>
-                    <li><a>3</a></li>
-                    <li><a>4</a></li>
-                    <li><a>5</a></li>
-                    <li><a>6</a></li>
-                    <li><a>7</a></li>
-                    <li><a>8</a></li>
-                    <li><a>9</a></li>-->
                     <li><a  class="next">&raquo;</a></li>
                 </ul>
             </div>

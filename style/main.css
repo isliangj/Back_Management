@@ -77,11 +77,45 @@ header div{
   background: url("../images/icon1.png") no-repeat 0 13px;
 }
 
+#nav_list_fir{
+  color: #00B5F8;
+  background: url("../images/icon2.png") no-repeat 0 13px;
+}
+
+.nav_list li:hover{
+  color: #00B5F8;
+  background: url("../images/icon2.png") no-repeat 0 13px;
+}
+
 .content{
   flex: 1;
 }
 
+.search{
+  margin: 5px;
+}
+
+.search_sel{
+  height: 25px;
+  border: none;
+  background-color: #FFF;
+}
+
+.search_inp{
+  height: 25px;
+  border: none;
+}
+
+.search a img{
+  background-color: #FFF;
+  position: relative;
+  top: 8px;
+  left: -5px;
+}
+
 .content_add{
+  display: flex;
+  justify-content: space-between;
   background-color: #E8EEF4;
   width: 95%;
   margin: 30px auto 0;
@@ -92,7 +126,6 @@ header div{
   text-decoration: none;
   color: #00B5F8;
   font-size: 25px;
-  padding: 15px;
 }
 
 .content_list table{
@@ -200,13 +233,6 @@ footer p{
   float: right;
 }
 
-#updateinput{
-  display: none;
-}
-
-#lastinput{
-  display: block;
-}
 
 /*
 分页样式
